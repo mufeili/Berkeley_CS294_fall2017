@@ -18,6 +18,7 @@ import tf_util
 import gym
 import load_policy
 
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('expert_policy_file', type=str)
@@ -37,6 +38,9 @@ def main():
 
         env = gym.make(args.envname)
         max_steps = args.max_timesteps or env.spec.timestep_limit
+
+        print('observation space: ', env.observation_space)
+        print('action space: ', env.action_space)
 
         returns = []
         observations = []
@@ -71,10 +75,11 @@ def main():
         if not os.path.exists('data'):
             os.makedirs('data')
         path = '/'.join(['data', '_'.join([args.envname, 'num_rollouts', 
-            str(args.num_rollouts), 'max_steps', str(max_steps)])])
+            str(args.num_rollouts)])])
 
         with open(''.join([path, '.pkl']), 'wb') as f:
             pickle.dump(expert_data, f)
+
 
 if __name__ == '__main__':
     main()
