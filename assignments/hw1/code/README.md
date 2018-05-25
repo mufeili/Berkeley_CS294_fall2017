@@ -16,6 +16,3 @@ In `experts/`, the provided expert policies are:
 * Walker2d-v1.pkl
 
 The name of the pickle file corresponds to the name of the gym environment.
-
-## Warmup Question
-Simply do `sh warm_up.sh` and then start tensorboard with `python -m tensorboard.main --logdir=./`.

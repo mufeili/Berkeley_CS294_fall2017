@@ -9,7 +9,6 @@ Example usage:
 Author of this script and included expert policies: Jonathan Ho (hoj@openai.com)
 """
 
-import argparse
 import os
 import pickle
 import tensorflow as tf
@@ -18,8 +17,8 @@ import tf_util
 import gym
 import load_policy
 
-
 def main():
+    import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('expert_policy_file', type=str)
     parser.add_argument('envname', type=str)
@@ -27,6 +26,7 @@ def main():
     parser.add_argument("--max_timesteps", type=int)
     parser.add_argument('--num_rollouts', type=int, default=20,
                         help='Number of expert roll outs')
+    parser.add_argument('--random_seed', type=int, default=0)
     args = parser.parse_args()
 
     print('loading and building expert policy')
@@ -37,6 +37,7 @@ def main():
         tf_util.initialize()
 
         env = gym.make(args.envname)
+        env.seed(args.random_seed)
         max_steps = args.max_timesteps or env.spec.timestep_limit
 
         print('observation space: ', env.observation_space)
@@ -74,12 +75,11 @@ def main():
 
         if not os.path.exists('data'):
             os.makedirs('data')
-        path = '/'.join(['data', '_'.join([args.envname, 'num_rollouts', 
-            str(args.num_rollouts)])])
+        path = '/'.join(['data', '_'.join([args.envname, 'rollouts',
+                                           str(args.num_rollouts)])])
 
         with open(''.join([path, '.pkl']), 'wb') as f:
             pickle.dump(expert_data, f)
-
 
 if __name__ == '__main__':
     main()

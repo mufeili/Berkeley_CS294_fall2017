@@ -1,4 +1,6 @@
+import datetime
 import numpy as np
+import tensorboard_logger as logger
 import tensorflow as tf # pylint: ignore-module
 #import builtins
 import functools
@@ -491,3 +493,35 @@ def reset():
     _PLACEHOLDER_CACHE = {}
     VARIABLES = {}
     tf.reset_default_graph()
+
+# ================================================================
+# Tensorboard logger
+# ================================================================
+
+def date_filename(base_dir='./'):
+    time = datetime.datetime.now()
+    return os.path.join(base_dir, '{}_{:02d}-{:02d}-{:02d}'.format(
+        time.date(), time.hour, time.minute, time.second
+    ))
+
+def mkdir_p(path, log=True):
+    import errno
+    try:
+        os.makedirs(path)
+        if log:
+            print('Created directory %s' % path)
+    except OSError as exc:
+        if exc.errno == errno.EEXIST and os.path.isdir(path):
+            pass
+        else:
+            raise
+
+def set_tensorboard(args):
+    """Create a logging directory and configure a tensorboard logger."""
+    log_dir = '_'.join([date_filename(args['log_base_dir']), 'seed', str(args['random_seed'])])
+    mkdir_p(log_dir)
+    try:
+        logger.configure(log_dir)
+    except ValueError:
+        pass
+    return log_dir, logger

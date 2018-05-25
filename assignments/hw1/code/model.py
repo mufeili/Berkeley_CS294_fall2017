@@ -2,17 +2,15 @@ import torch.nn as nn
 
 
 class FNN(nn.Module):
-    def __init__(self,
-                 input_size=11,
-                 hidden1_size=200,
-                 output_size=1):
+
+    def __init__(self, in_size=11, hidden1_size=200, out_size=1):
         super(FNN, self).__init__()
 
         self.fc = nn.Sequential(
-            nn.Linear(input_size, hidden1_size),
-            nn.ReLU(),
-            nn.Linear(hidden1_size, output_size)
+            nn.Linear(in_size, hidden1_size),
+            nn.LeakyReLU(),
+            nn.Linear(hidden1_size, out_size)
         )
 
-    def forward(self, x):
-        return self.fc(x)
+    def forward(self, o):
+        return self.fc(o)
