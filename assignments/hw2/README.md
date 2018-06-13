@@ -4,9 +4,9 @@
 # Dependencies
 
 - Python 3.5.5
-- [TensorFlow 1.1.0](https://www.tensorflow.org/)
 - [PyTorch 0.4.0](http://pytorch.org/)
-- [OpenAI Gym 0.9.3](https://github.com/openai/gym) 
+- [MuJuCo 1.31](http://www.mujoco.org/)
+- [OpenAI Gym 0.9.3](https://github.com/openai/gym) -- Note you also need to install [mujoco-py 0.5](https://github.com/openai/mujoco-py/tree/0.5) for Gym.
 
 For the visualization required, just follow the instructions in homework requirement and the comments in `plot.py`.
 
