@@ -25,8 +25,7 @@ For the visualization required, just follow the instructions in homework require
 
 - Run ```console
 python train_pg.py InvertedPendulum-v1 -n 100 -b 2000 -l 1 -s 32 -e 10 -rtg -lr 5e-3 -ts -tm --exp_name b2000
-python train_pg.py InvertedPendulum-v1 -n 100 -b 2000 -l 1 -s 32 -e 10 -rtg -lr 5e-3 -ts -tm -bl  --exp_name b2000_baseline
-```
+python train_pg.py InvertedPendulum-v1 -n 100 -b 2000 -l 1 -s 32 -e 10 -rtg -lr 5e-3 -ts -tm -bl  --exp_name b2000_baseline```
 
 # 6 HalfCheetah
 
