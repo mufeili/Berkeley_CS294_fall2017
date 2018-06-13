@@ -1,6 +1,6 @@
 # Berkeley_CS294_fall2017
 
-I intend to use this repository to organize the materials for [CS294 Deep Reinforcement Learning](http://rll.berkeley.edu/deeprlcourse/) offered at UC Berkeley in fall 2017. Besides the slides for the course, I also attempt to finish the [homework](https://github.com/berkeleydeeprlcourse/homework) for the course using PyTorch.
+I intend to use this repository to finish the [homework](https://github.com/berkeleydeeprlcourse/homework) for the course [CS294 Deep Reinforcement Learning](http://rll.berkeley.edu/deeprlcourse/) offered at UC Berkeley in fall 2017 using PyTorch.
 
 ## Requirement and Dependencies
 - Python 3.5.5
