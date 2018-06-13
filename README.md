@@ -7,7 +7,7 @@ I intend to use this repository to finish the [homework](https://github.com/berk
 - [TensorFlow 1.1.0](https://www.tensorflow.org/)
 - [PyTorch 0.4.0](http://pytorch.org/)
 - [MuJuCo 1.31](http://www.mujoco.org/)
-- [OpenAI Gym 0.9.3](https://github.com/openai/gym) -- Note you also need to install [mujoco-py 0.5.7](https://github.com/openai/mujoco-py/tree/master) for Gym.
+- [OpenAI Gym 0.9.3](https://github.com/openai/gym) -- Note you also need to install [mujoco-py 0.5](https://github.com/openai/mujoco-py/tree/0.5) for Gym.
 - [tensorboard_logger 0.1.0](https://github.com/TeamHG-Memex/tensorboard_logger)
 
 ## Acknowledgement
