@@ -7,6 +7,8 @@
 - [PyTorch 0.4.0](http://pytorch.org/)
 - [MuJuCo 1.31](http://www.mujoco.org/)
 - [OpenAI Gym 0.9.3](https://github.com/openai/gym) -- Note you also need to install [mujoco-py 0.5](https://github.com/openai/mujoco-py/tree/0.5) for Gym.
+- [seaborn 0.8.1](https://seaborn.pydata.org/index.html)
+- [pandas 0.23.0](https://pandas.pydata.org/)
 
 For the visualization required, just follow the instructions in homework requirement and the comments in `plot.py`.
 
