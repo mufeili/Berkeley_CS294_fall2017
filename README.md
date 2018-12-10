@@ -13,3 +13,7 @@ I intend to use this repository to finish the [homework](https://github.com/berk
 ## Acknowledgement
 
 I've referenced [Observerspy's implementation](https://github.com/Observerspy/CS294) as well as [PyTorch's RL examples](https://github.com/pytorch/examples/tree/master/reinforcement_learning).
+
+## Disclaimer
+
+I've only finished the first two assignments and have been busy with many other issues since then. I cannot guarantee when this will be finished.
